@@ -1,0 +1,25 @@
+name: React App CI
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  test:
+    name: Unit Test the Application
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v4
+      - name: Use Node.js 21.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: 21.x
+      - name: Install dependencies
+        run: yarn --frozen-lockfile
+      - name: Run tests
+        run: yarn test
