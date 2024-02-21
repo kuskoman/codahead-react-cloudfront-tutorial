@@ -10,6 +10,6 @@ describe("About Page", () => {
 
   test("displays the correct description", () => {
     render(<About />);
-    expect(screen.getByText(/this is the about page/i)).toBeInTheDocument();
+    expect(screen.getByText(/Hello from CloudFront!/i)).toBeInTheDocument();
   });
 });
